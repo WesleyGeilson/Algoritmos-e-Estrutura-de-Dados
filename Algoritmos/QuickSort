@@ -1,0 +1,22 @@
+// -------------- ALGORITMO PARTICIONAMENTO (QUICKSORT) -------------- // ordenar
+// Vantagem: Rapido, usado com pilha
+// Desvantagem: No pior dos casos não vale a pena
+
+// algoritmo de particionamento;
+
+particao(vet[n], i, j){
+    i = 1
+    j = n
+    enquanto( i < j){
+        se (vet[i] <= k){
+            i++ // esta na posicao correta
+        }
+        se (vet[j] > k){
+            j-- // esta na posicao correta
+        }
+        se(vet[i] > k  ou  vet[j] < k){
+            troca(vet[i], vet[j])
+        }        
+    }
+    trocar(1, i-1)
+}

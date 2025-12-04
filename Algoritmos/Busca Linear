@@ -1,0 +1,16 @@
+// -------------- BUSCA LINEAR -------------- // achar, inserir ou remover algum elemento
+// Vantagem: Rapido e pratico
+
+i = 1
+// seja k o numero que se deseja encontrar
+Enquanto(i < n){
+    Se(k == Vet[i]){
+        Para
+        encontrei = verdadeiro
+    }
+    i++
+}
+Se (encontrei != verdadeiro){
+    Imprimir("Seu elemento nao esta na lista/vetor")
+}
+

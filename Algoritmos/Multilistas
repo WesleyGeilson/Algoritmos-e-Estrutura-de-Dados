@@ -1,0 +1,30 @@
+// Para construirmos o algoritmo que nos entregue multilistas, precisamos pensar o seguinte cenario:
+/* Em uma lista ordenada, é facil encontrarmos algum elemento, é só realizarmos uma busca binaria e como passe de magica de O(log(n))  e encontramos ele
+  
+   Mas e para inserir? bom se queremos colocar um elemento nessa lista ordenada, sua posicao importa
+   qual a desvantagem disso? o deslocamento de elementos é o(n)
+   De forma semelhante temos para remover um elemento.
+   
+   Qual seria uma Solução para otimizar isso..? 
+   Multilistas! é uma ideia que divimos uma lista grande em porções menores (Se tivermos 100 elementos, então nossas sublistas terão 10 elementos cada) 
+
+   Algoritmo que realiza essa facanha para nos:
+
+ 
+   */
+
+Busca_multilistas(k,vet['1...n'],totalElementos){ // k é o valor que estamos procurando, t é o total de elementos
+    tam_blocos = √totalElementos // queremos pegar a quantidade total de elemento e encontrar um numero ideial para as sublistas
+    para (i = 0 ate totalElementos/tam_blocos, í++) { // A lista perde seus indices 'normais' para a sublista (se a lista tiver 100 pos entao agora ela passa a ter 10 somente)
+        inicial_bloco = (i*tam_blocos) + 1 // crava o bloco inicial
+        final_bloco = min(totalElementos, i+1 * tam_blocos) // crava o bloco final
+        encontrado = Busca_Binaria(k, vet[inicial_bloco...final_bloco]) // aqui ele entra em cada intervalo e realiza a busca
+    }
+    Se(encontrado == verdadeiro){
+        imprime('O numero esta contido nas subslistas')
+    }
+    senao{
+        imprime('O numero nao esta contido nas subslistas')
+    }
+}
+
