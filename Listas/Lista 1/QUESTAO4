@@ -1,0 +1,27 @@
+QUARTA QUESTAO:
+
+Realizar contagem de impar e se a contagem der impar dizer qual deu impar, vamos pegar a situacao ideial que o professor propos no exercicio:
+
+i = 1
+j = 1 
+num;
+
+Enquanto(i < n){
+    se(vetor[i] % 2 != 0 ){
+        num = vetor[i]
+        Enquanto (j < n){
+            se(vetor[i] == vetor[j]){
+                cont ++
+            }
+        }
+        if(cont % 2 !=){
+            imprimir("Achei o numero: 'num' ")
+        }
+        
+        cont = 0;
+    }
+    i++
+}
+
+
+COMPLEXIDADE: O(n²)

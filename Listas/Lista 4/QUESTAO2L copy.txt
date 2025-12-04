@@ -1,0 +1,11 @@
+//Escreva uma algoritmo recursivo de busca binária de um elemento k em um vetor L[1..n].
+
+
+Busca Binaria(vet[1 ate n]){
+    k;
+    i = 1;
+    j = n;
+    meiuca = n/2
+
+    se   
+}

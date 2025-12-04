@@ -1,0 +1,27 @@
+/* 1 Escreva o algoritmo de atualização em uma lista ordenada seguindo a estratégia apresentada
+nas notas da terceira aula. Dada uma lista ordenada encontre uma ocorrência do elemento x e
+troque por y. Avalie o tempo de execução do algoritmo apresentado. E sim, a lista ficara desordenada*/
+
+Busca Binaria(i,j){
+    i = 1
+    j = n    
+    Enquanto (i <= j){ // realizamos a busca binaria para encontrar o 'x' e posteriomente o 'y', ignore quando nao for encontrado, complexidade: O(log n)
+
+    k, y;
+    meiuca = (i+j)/2
+
+    Se(k == vet{meiuca}){    
+        vet[meio] = y
+    }
+    Se(k > vet[meiuca]){
+        i = meiuca+1   
+
+    }   
+    Se(k < vet[meiuca]){
+        j = meiuca-1
+    }
+} // quando ele terminar essas operacoes ele tera encontrado onde esta o k.
+
+//No pior cenario seria: 0(n)? adicionamente, o fato da busca binaria abocanhar toda a funcao, faz com que ela se torne tao somente O(log n)
+}
+    

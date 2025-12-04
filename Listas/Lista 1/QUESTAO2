@@ -1,0 +1,35 @@
+SEGUNDA QUESTÃO: 
+
+Passo 1 - Assumir que a posicao 1 e 2 assumem o maior e o segundo maior valor respectivamente
+Passo 2 - Percorrer o vetor comparando ambos com o proximo elemento e adicionalmente se comparando
+
+A problematica agora e a respeito de encontrar um segundo maior impar. Iremos assumir que os dois primeiros valores sao impares e ponto final.
+
+maiorImp = vetor[1]
+segundoMaiorImp = vetor[2]
+
+i = 3
+    Se(vetor[1] > vetor[2]){
+        maiorImp = vetor[1]
+        segundoMaiorImp = vetor[2]
+    }
+    se senao(vetor[1] < vetor[2]){
+        maiorImp = v[2]
+        segundoMaiorImp = v[1]
+    }
+    
+
+Enquanto (i < n){
+    Se(v[i] é impar){
+        se (vetor[i] > maiorImp){
+        segundoMaiorImp = maiorImp
+        maiorImp = vetor[i]
+        }
+        se senao(segundoMaiorImp < vetor[i]){
+            segundoMaiorImp = vetor[i]
+        }
+    }
+    i++
+}
+
+COMPLEXIDADE: O(n)

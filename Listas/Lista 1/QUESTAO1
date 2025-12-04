@@ -1,0 +1,22 @@
+PRIMEIRA QUESTÃO:
+
+O problema da primeira questão é que temos um vetor de n inteiros e devemos encontrar o maior numero impar armazenado.
+
+Para resolve-lo, segue o algoritmo abaixo:
+
+Passo 1 - Assumir que o primeiro elemento é o maior impar (Sendo ou não sendo)
+Passo 2 - Iterar sobre o array(Vetor) para encontrar de fato o num maior impar
+
+i = 1;
+maiorImp = vet[1];
+
+Enquanto(i < n){
+    Se( maiorImp % 2 != 0 ){
+        Se(maiorImp < vet[i]){
+            maiorImp = vet[i]
+        }
+    }
+    i++;
+}
+
+COMPLEXIDADE: O(n)

@@ -1,0 +1,43 @@
+QUINTA QUESTAO: 
+
+
+Para o Caso nao ordenado:
+Passo 1 = temos que encontrar um numero que seja multiplo, entao a gente pega o primeiro numero que vier no vetor e multiplica por 2.
+Passo 2 = agora que esse numero é o dobro, iteramos no vetor e localizamos um numero igual a esse k, e se for igual, significa que ha um dobro dele presente no vetor
+
+k;
+Enquanto ( i < n ) {
+    k = vet[i]*2
+    j = 0
+    achei = 0
+    Enquanto (j < n ){
+        se(k == vetor[j]){
+            achei = 1 
+        }
+    j++
+    }
+    i++
+    se(achei == 1 ){
+        imprimir("Achei um multiplo !!")
+    }
+}
+
+COMPLEXIDADE: O(n²)
+
+
+Para o caso ordenado
+
+Caso ordenado:
+
+i = 1 
+aux = 0
+Enquanto(i < n){
+    aux = v[i]*2
+    Se (aux == v[i]){
+        imprimir("Achei um multiplo !!")
+        break
+    }
+}
+
+
+COMPLEXIDADE: O(n)

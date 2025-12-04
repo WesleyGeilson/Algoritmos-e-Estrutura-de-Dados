@@ -1,0 +1,8 @@
+Multilistas(k,vet['1...n'],totalElementos){ // k é o valor que estamos procurando, t é o total de elementos
+    tam_bloco = √totalElementos // queremos pegar a quantidade total de elemento e encontrar um numero ideial para as sublistas
+    para (i = 0 ate totalElementos/tam_blocos, í++) { // A lista perde seus indices 'normais' para a sublista (se a lista tiver 100 pos entao agora ela passa a ter 10 somente)
+        inicial_bloco = i*tam_blocos + 1 // crava o bloco inicial
+        final_bloco = min(totalElementos, i+1 * tam_bloco) // crava o bloco final
+
+    }
+}
