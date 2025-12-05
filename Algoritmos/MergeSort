@@ -1,0 +1,10 @@
+/* Suponha que vc tem uma grande lista, ou grande array, um vetor completamente desordenado, uma bagunça
+   É do nosso interesse para a ordenação por MergeSort, dividir para conquistar
+
+   1 -> Vamos partir esse vetor no meio.
+   2 -> Vamos organizar essas duas partes
+   3 -> 
+   /*
+
+   12 65 3 2 1 4 5 4 7 4 57 32
+   12 65 3 || 2 1 4 || 5 4 7  || 4 57 32

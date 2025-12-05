@@ -2,21 +2,40 @@
 // Vantagem: Rapido, usado com pilha
 // Desvantagem: No pior dos casos não vale a pena
 
-// algoritmo de particionamento;
+// algoritmo do pivo - DIVIDIR
 
-particao(vet[n], i, j){
-    i = 1
-    j = n
-    enquanto( i < j){
-        se (vet[i] <= k){
+Partição(vet[], inicio, fim){
+    posPivo = piso[(inicio+fim) /2] //pivo
+    Pivo = vet[posPivo]
+
+    i = inicio // qual a necessidade dessas variaveis i e j, porque nao usar somente inicio e fim
+    j = fim
+
+    Para( i <= j ){
+        enquanto (vet[i] < pivo){
             i++ // esta na posicao correta
         }
-        se (vet[j] > k){
+        enquanto (vet[j] > pivo){
             j-- // esta na posicao correta
         }
-        se(vet[i] > k  ou  vet[j] < k){
+        se (i<=j){
             troca(vet[i], vet[j])
+            i++, j--
         }        
     }
-    trocar(1, i-1)
+    retorna i // onde ficou nossa posicao do pivo? é necessario retornar para saber, chamamos aqui de ponto de corte, podemos acessar tanto pelo inicio quanto pelo fim
 }
+
+QuickSort(Vet[1...n], i, j){
+    se(i < j){ // o meu j ainda vale para ca? digo se tivermos 5 posicoes assim: 54321, teremos que j = 3 e i = 3, e o vetor ja esta ordenado
+        indicePivo = Partição(vet[], i, j) //aqui i sera o ponto do corte, portanto quando repassar ele 
+        se(i < indicePivo - 1){
+            QuickSort(vet[], i , indicePivo - 1)
+        }
+        se(j < fim){
+            QuickSort(vet[], indicePivo, j)
+        }
+    }
+
+}
+
