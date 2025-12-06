@@ -1,0 +1,19 @@
+//  Maior segmento ordenado
+
+ref_um
+ref_dois 
+streak = 0
+aux = 0
+Para(i até n-1){
+    Se (vet[i+1] > vet[i]){
+        streak++
+    }
+    se (vet[i+1] <= vet[i]){
+        streak = 0
+    }
+    se(streak > aux){
+        aux = streak
+    }
+}
+Imprime (aux)
+

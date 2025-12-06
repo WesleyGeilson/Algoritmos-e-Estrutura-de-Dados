@@ -1,0 +1,18 @@
+// Impares em ordem crescente?
+
+
+Busca Linear(vet[]){
+    imp = 1
+    aux = 1
+
+    Para(i < n, i++){
+        Se(Vet[i] % 2 != 0){
+            imp = vet[i]
+        }
+        Se(imp < aux){
+            Imprime("Não está correto a ordem")
+            para
+        }
+        aux = imp
+    }
+}

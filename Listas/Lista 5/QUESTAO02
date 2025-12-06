@@ -2,7 +2,7 @@
 faça chamadas sucessivas ao procedimento de intercalação). Também estime o tempo de execução
 do seu programa.*/
 
-// A minha ideia enquanto estudante é pegar os blocos e ordenar cada um deles e entao a gente reune eles, parecido com o MergeSort 
+// A minha ideia enquanto estudante é pegar os blocos e ordenar cada um deles usando bubblesort mesmo e entao a gente reune eles, nao sei como exatamente, talvez organizando de dois em dois blocos e juntando em um e em seguinda fazer isso mais vezes? 
 
 
 Multilistas(k,vet['1...n'],totalElementos){ // k é o valor que estamos procurando, t é o total de elementos

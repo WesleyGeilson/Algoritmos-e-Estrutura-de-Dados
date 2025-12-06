@@ -1,0 +1,23 @@
+// O elemento que aparece mais vezes
+
+i = 1
+aux = 1
+j = 2
+num_selected
+Para(i < n, i++){
+    count = 1
+    Para(j < n, j++){   
+        Se(vet[i] == vet[j]){
+            count++
+        }
+        Se(count > aux){
+            num_selected = v[i] 
+        }
+    }    
+    Se(aux < count){
+        aux = count
+    }
+}
+imprime(num_selected)
+
+Complexidade : O(n²)

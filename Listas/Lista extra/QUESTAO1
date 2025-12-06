@@ -1,0 +1,24 @@
+//O maior menor que a media
+
+Media(vet[]){
+    media = 0
+    i = 1
+    posCount
+    Enquanto(i < n){
+        media = vet[i] + media
+        i++
+    }
+    mediaFinal = media/n
+}
+// temos a media
+
+BuscaLinear(vet[]){
+    num_found = 0
+    Enquanto(i < n){
+        se(vet[i] > num_found e vet[i] < mediaFinal){
+            num_found = vet[i]
+        }
+    }
+}
+
+complexidade = 2 O(n) => O(n)
