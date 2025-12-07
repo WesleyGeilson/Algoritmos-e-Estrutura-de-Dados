@@ -2,7 +2,7 @@
 // Vantagem: Didatico, crucial para prosseguir na disciplina; 
 // Desvantagem: Complexidade: O(n²)
 
-Bubblesort(vet[1...n]){
+BubbleSort(vet[1...n]){
     int i;
     int j;
     int aux
@@ -10,10 +10,8 @@ Bubblesort(vet[1...n]){
     para (j = 1 ate n-1, j++){  // como nosso algoritmo coloca o maior por ultimo, nao precisamos sempre ir ate la para verificar.
         troca_flag = falsa
         para(i = 1 ate n-1, i++){
-            Se(v[i] > v[i+1]){
-                aux = v[i+1]
-                v[i+1] = v[i]
-                v[i] = aux
+            Se(vet[i] > vet[i+1]){
+                swap(vet[i], vet[i+1])
                 troca_flag = verdadeira
             }
         }

@@ -5,6 +5,7 @@
 int i = 1
 int j = n
 ref = (i + j)/2
+k
 
 enquanto(i <= j){
     se(vet[ref] = k){
@@ -15,8 +16,13 @@ enquanto(i <= j){
         // seu valor esta inserido em todos os valores da direira, portanto podemos descartar os valores da esquerda
         i = ref+1
     }
-    se senao(vet[ref] > k)
+    se (vet[ref] > k){
         // seu valor esta inserido em todos os valores da esquerda, portanto podemos descartar os valores da direita
         j = ref-1
-
+    }
+    ref = (i + j)/2
+    
 } // enquanto i for menor que j, nos garante que ele ira percorrer ate encontar um intervalo ideial e quando as dois indices forem iguais isso implica que encontramos o numero que queriamos
+
+
+O(log(n))

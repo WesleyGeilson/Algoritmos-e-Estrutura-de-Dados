@@ -5,7 +5,7 @@
 // algoritmo do pivo - DIVIDIR
 
 Partição(vet[], inicio, fim){
-    posPivo = piso[(inicio+fim) /2] //pivo
+    posPivo = piso[(inicio+fim)/2] //pivo
     Pivo = vet[posPivo]
 
     i = inicio // qual a necessidade dessas variaveis i e j, porque nao usar somente inicio e fim

@@ -21,4 +21,7 @@ BuscaLinear(vet[]){
     }
 }
 
+
+
+
 complexidade = 2 O(n) => O(n)
