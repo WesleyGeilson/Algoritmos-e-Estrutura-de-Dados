@@ -1,1 +1,33 @@
-EMPTY2
+Separando pares e  ́ımpares
+Imagine que p  ́e um ponteiro para uma lista encadeada contendo  ́umeros inteiros.
+
+A tarefa consiste em
+→ separar os elementos pares e ́ımpares em listas diferentes
+
+
+Listas *par (Listas *k, Listas *pares) {  // considere que os a lista pares inicia com um elemento nulo
+    Listas *aux_ant = k
+    Listas *aux_atual = k->nó
+    Listas *aux_par = pares
+    
+    Se(aux_ant->valor == Par){
+        aux_par = aux_ant
+        aux_par->nó = Nulo
+        k = k->nó
+    }
+    Para (aux_atual != Nulo){
+        Se( aux_atual->valor == Par ){
+            aux_ant->nó = aux_atual->nó
+            aux_par-> nó = aux_atual
+            aux_par = aux_atual
+            aux_atual = aux_ant->nó
+            aux_par->nó = Nulo
+        }
+        Senão{
+            aux_ant = aux_ant->nó
+            aux_atual = aux_atual->nó
+            
+        }
+    }   
+    retornar pares // a lista que sobrou é impar, a que fizemos é par
+}

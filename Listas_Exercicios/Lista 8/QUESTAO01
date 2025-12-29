@@ -1,1 +1,32 @@
-EMPTY1
+Lista *Descobrir_maior_e_ant(Lista *p){
+    Lista *aux = p->nó
+    Lista *maior = p
+    Lista *ant_maior = p
+    Enquanto (aux !=Nulo){
+        Se(aux->valor > maior->valor){
+            maior = aux
+            ant_maior = p 
+        }
+    aux = aux-> nó
+    p = p->nó
+    }
+    retorna maior, ant_maior
+}
+
+Lista *Modificar (Lista *p){
+    Lista *maior, *ant_maior = Descobrir_maior_e_ant(Lista *p)
+    Lista *aux = p
+    
+    Enquanto(aux != Nulo){
+        Se(aux ->valor == maior->valor){
+            ant_maior->nó = maior-> nó
+            maior->nó = Nulo
+        }
+        aux = aux->nó
+    }
+    aux->nó = maior
+    retornar p
+}
+
+
+// esse algoritmo nao funciona caso o maior elemento seja o primeiro, pois elel ira bugar com o ant_maior
