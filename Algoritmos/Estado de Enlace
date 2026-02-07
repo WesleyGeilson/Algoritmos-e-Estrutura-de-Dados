@@ -1,0 +1,20 @@
+// :
+Algoritmo de Estados De Enlaces(){
+    Inicializar(){
+        (N^) = {u} // sendo u o roteador de origem
+        Para todos os nós v
+            Se v é adjacente a u
+                então:
+                    D(v) = c(u,v)
+                senão:
+                    D(v) = infinito
+    }
+    Loop(){
+        Ache w não pertencente a N^, tal que D(w) é um minimo
+        Acrescente w a N^
+        Atualize D(v) para todo v adjacente a w e não presente em N^
+            D(v) = min( D(v), D(w) + c(w,v) )
+        até que todos os nós estejam em N^
+    }
+    
+}
