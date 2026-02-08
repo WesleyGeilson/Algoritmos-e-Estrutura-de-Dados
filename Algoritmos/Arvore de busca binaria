@@ -1,0 +1,135 @@
+// A árvore de busca binaria se apoia na antiga estrutura de listas duplamente encadeadas, com algumas diferenças que a tornam única.
+
+// 1. Uma lista duplamente encadeada inicia no primeiro elemento, a arvore inicia no meio. (Nos exemplos abaixo ao menos)
+// 2. Em seguida, todos os elementos a sua esquerda são menores que ele, e os da direita são maiores que ele.
+// 3. Pegamos os ponteiros *esq (vulgo *ant, nas listas) e *dir (vulgo *prox, nas listas) e apontamos para os respectivos meio do lado direito e esquerdo, faremos isso até que não sobre elementos.
+// 4. O menor elemento da arvore encontra-se sempre no ultimo elemento do lado esquerdo e o maior elemento encontra-se sempre no ultimo elemento do lado direito
+// 5. Chama-se Raiz, o elemento central que arranja o caminho para todos os filhos (Elemento primario da arvore que alcança todos os elementos)
+// 6. Chama-se Folha, elementos que não tenham filhos (Não pode haver elementos abaixo dele)
+// 7. Chama-se Pai, elementos que contenham pelo menos um filho (Que haja ao menos um elemento a baixo dele)
+
+struct nó{
+    int val; 
+    struct nó *esq, *dir;
+}Nó
+
+//Algoritmo ITERATIVO que percorre toda a arvore em busca de um elemento
+Busca_na_arvore(p,k){
+    Se (p == NULO){
+        Imprime("A arvore é inexistente");
+        retorna; 
+    }
+    q = p // estrutura auxiliar
+    Enquanto (q != NULO){
+        Se(q->val == k){
+            Imprime("Valor encontrado!")
+            retorna
+        }
+        Se(q->val > k){
+            q = q->esq
+        }
+        Senão se(q->val < k){
+            q = q->dir
+        }
+    }Imprime("O valor não está na arvore")
+}
+//Algoritmo ITERATIVO que percorre toda a arvore e insere somente no final, na folha respeitando a estrutura da arvore, ou seja, os elementos menores a esquerda e os maiores a direita
+Inserção_simples_arvore(p,k){
+    Novo aux;
+    aux->val = k
+    aux->esq = NULO
+    aux->dir = NULO
+    q1 = p, q2 = NULO 
+    Enquanto(q1 != NULO){
+        Se(q1->val > k){
+            q2 = q1
+            q1-> esq
+        }
+        Senão se(q1->val >){
+            q2 = q1
+            q1->dir
+        }
+    }
+    Se(q2 == NULO){
+        retorna aux
+    }
+    Senão se (q2->val > k ){
+        q2->esq = aux
+    }
+    Senão se(q2->val < k){
+        q2->dir = aux
+    }
+    retorna p
+}
+//Algoritmo ITERATIVO que percorre toda a arvore e remove o menor elemento
+Remoção_o_menor_arvore(p){
+    Se(p == NULO){
+        Imprime("A arvore é inexistente");
+        retorna; 
+    }
+    q1 = p
+    q2 = NULO
+    Enquanto (q1->esq != NULO){
+        q2 = q1
+        q1 = q1->esq
+    }
+    Se(q2 == NULO){ // significa que o menor está no topo!
+        p = q1->dir
+    }
+    Se senão (q2 != NULO){
+        q2->esq = q1->dir
+    }
+    retorna (p, q1)
+}
+//Algoritmo ITERATIVO que percorre toda a arvore e remove o maior elemento
+Remoção_o_maior_arvore(p){
+    Se(p == NULO){
+        Imprime("A arvore é inexistente")
+    }
+}
+//Algoritmo ITERATIVO que percorre toda a arvore, localiza o elemento procurado e o remove, recofigurando toda a arvore | OBS: REVISAR ESSE! |
+Remoção_elemento_arvore(p,k){
+    Se(p == NULO){
+        Imprime("Arvore inexistente")
+        retorna
+    }
+    q1 = p
+    q2 = NULO
+    Enquanto(q1 != NULO){
+        Se(k == q1->val){
+            Pare
+        }
+        Se(q1 -> val > k){
+            q2 = q1
+            q1 = q1->esq
+        }
+        Senão se (q1 -> val < k){
+            q2 = q1
+            q1 = q1->dir
+        }
+    }
+    Se (q1 == NULO){ // o elemento não está na arvore
+        retorna p }
+    (r,m) = Remoção_o_menor_arvore (q1->dir) // Onde r é o ponto de corte e m é o menor elemento dessa "Suvarvore" que nós passamos para a função
+    Se(q2 == NULO){
+        p = m
+    }
+    Senão se(k < q2->val){
+        q2->esq = m
+    }
+    Senão se(k > q2->val){
+        q2->dir = m
+    }
+    Se (m != NULO){
+        m->esq = q1->esq
+        m->dir = r
+    }
+    Senão{
+        Se(k < q2->val ){
+            q2->esq = q1-> esq
+            q2->dir = q2-> esq
+        }
+    }
+    
+    retorna p
+}
