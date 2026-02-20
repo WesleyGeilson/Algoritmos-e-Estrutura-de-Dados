@@ -133,3 +133,58 @@ Remoção_elemento_arvore(p,k){
     
     retorna p
 }
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Vamos aprofundar um pouco mais o estudo das arvores e adicionar um ponteiro a mais para ela, um ponteiro que aponta para o seu respectivo Pai
+
+struct nó {
+    int val;
+    struct nó *esq, *dir, *pai;
+}Nó
+
+// Algoritmo ITERATIVO que percorre toda a arvore e imprime ela
+Imprime_arvore (p) {
+    q1 = p;
+    q2 = Nulo;
+
+    Enquanto ( q1 != Nulo ) {
+        // CASO 1: Descendo na árvore (vindo do pai)
+        Se ( q2 = q1->pai ) {
+            q2 = q1;
+            Se ( q1->esq != Nulo ) {
+                q1 = q1->esq;
+            } 
+            Senao {
+                Imprime ( q1->val ); // Visita o nó se não houver esquerda
+                Se ( q1->dir != Nulo ) {
+                    q1 = q1->dir;
+                } 
+                Senao {
+                    q1 = q1->pai;
+                    // aqui está faltando algo?
+                }
+            }
+        }
+        // CASO 2: Subindo da esquerda
+        Senao Se ( q2 = q1->esq ) {
+            q2 = q1;
+            Imprime ( q1->val ); // Visita após retornar da subárvore esquerda
+            Se ( q1->dir != Nulo ) {
+                q1 = q1->dir;
+            } 
+            Senao {
+                q1 = q1->pai;
+            }
+        }
+        // CASO 3: Subindo da direita
+        Senao Se ( q2 = q1->dir ) {
+            q2 = q1;
+            q1 = q1->pai;
+        }
+    }
+}
