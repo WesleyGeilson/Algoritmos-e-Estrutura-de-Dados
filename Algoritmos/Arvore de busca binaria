@@ -188,3 +188,86 @@ Imprime_arvore (p) {
         }
     }
 }
+
+//Algoritmo RECURSIVO que descobre se uma arvore é ou não uma arvore de busca
+Isbst(p,min,max){ // min e max iniciados com -infinito e +infinito respectivamente
+    Se(p == NULO){
+        retorna verdadeiro // a arvore é binaria de busca
+    }
+    Se(p->val <= min ou p->val >= max){
+        imprime( "não é BST")
+        retorna
+    }
+    senão{
+        Isbst(p->esq, min, p->val)
+        Isbst(p->dir, p->val, max)
+    }
+
+} 
+
+//Algoritmo RECURSIVO que encontra o maior elemento k e imprime ele
+findAndprint(p,k){
+    Se(p == NULO){
+        retorna // n esta na arvore o elemento k
+    }
+    Se(p->val == k){
+        imprime(k)
+        retorna
+    }
+    senao{
+        Se(p-> val > k ){
+            findAndprint(p->esq, k)
+        }
+        Se(p-> val < k ){
+            findAndprint(p->dir, k)
+        }
+    }
+}
+
+// Algoritmo que usa pilha para contar quantos elementos tem na lista 
+count_elements(pt){
+    Se( pt == NULO){
+        retorna
+    }
+    Senão{
+        count = 0
+        p = {} // pilha vazia // 1
+        push(p,pt)
+        Enquanto(p não estiver vazia){
+            count++ // hotspot
+            q = pop(p,pt)
+            Se(q-> esq != NULO){
+                push(q->esq, pt)
+            }
+            Se(q-> dir != NULO){
+                push(q->dir, pt)
+            }
+        }
+    }
+}
+
+// Algoritmo RECURSIVO que imprime toda a arvore
+print_element(p){
+    se(p == NULO){
+        retorna
+    }
+    senão{
+        print_element(p->esq)
+        print_element(p->dir)
+    }
+    se(p->val %2 != 0){
+        imprime(p->val)
+    }
+}
+
+ROT-E(p){
+    aux = p;
+    aux_dois = p->dir;
+    p->dir = p->dir->esq; 
+    aux_dois->esq = aux;
+    retorna aux_dois;
+}
+
+ROT-D(){
+
+}
