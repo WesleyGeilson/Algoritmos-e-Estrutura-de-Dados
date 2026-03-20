@@ -1,0 +1,30 @@
+// As tabelas hash tem o intuito interessante de transformar buscas e inserções em O(1)  -  (Tempo constante)
+
+// Algoritmo que busca um dado elemento na tabela HASH
+
+find_element_hash(k, T){ // seja k o elemento e T a tabela hash inteira
+    p = Hash(k) // Funcao hash que vai ser aplicada no elemento que escolhemos, ira retornar algum indice na tabela.
+    Se (T[p] == NULO){
+        retorna(NAO)
+    }
+    q = T[p]
+    Enquanto(q != NULO){
+        Se(q->val == k){
+            Imprime("Achei")
+        }
+        Senão{
+            q= q->prox
+        }
+    } 
+}
+
+
+Insert_element_hash(k,T){
+    p = hash(k) // Calcula o indice na tabela HASH
+
+    aux = NovoRegint // Cria o elemento
+    aux->val = k // Faz o elemento ter o devido K
+
+    aux->prox = T[p] // qual seja o que T[p] estava apontando, agora quem aponta é o aux
+    T[p] = aux // faz T[p] ganhar o fio da meada desde o principio
+}

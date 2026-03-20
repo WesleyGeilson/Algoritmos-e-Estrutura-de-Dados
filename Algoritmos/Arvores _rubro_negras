@@ -1,0 +1,10 @@
+// Em uma arvore rubro os elementos ou sao pretos ou sao vermelho
+// A raiz é sempre preta
+// Um elemento novo a ser inserido, sempre nasce vermelho, com exceção se for raiz
+// Filhos esquerdos NUNCA podem ser vermelhos
+// Se isso acontece logo deve haver uma rotação a direita
+
+// Se colocarmos o filho esquerdo (Que inicialmente nasce vermelho) e há um outro filho direito vermelho, fazemos a rotação a direita
+// Nessa rotação a direita, o filho direito ganha a cor do pai e o pai ganha a cor do filho. Irá ficar: (P-V-V)
+
+// Se colocarmos um elemento e ele se tornar filho direito ou esquerdo de um pai vermelho, deve haver rotação a direita 
