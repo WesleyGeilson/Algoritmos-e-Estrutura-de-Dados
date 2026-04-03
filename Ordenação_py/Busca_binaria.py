@@ -3,6 +3,7 @@ import matplotlib.animation as animation
 from matplotlib.widgets import Button
 from matplotlib.widgets import Slider
 import numpy as np
+
 #===================================================================================================================
 #=============================== 1. Algoritmo Binary_search como um Gerador (yield) #===============================
 #======================================================================================================================
@@ -28,8 +29,8 @@ def binary_search(lista ,begin, end, value):
 #=============================== Configurações iniciais #===============================
 #'=======================================================================================
 
-qtd_bar = 100
-valor_procurado = 16
+qtd_bar = 1000
+valor_procurado = 12
 lista_valores = np.sort(np.random.randint(1, 100, qtd_bar))
 gerador_sort = binary_search(lista_valores, 0, len(lista_valores) - 1, valor_procurado  )  # Pega os valores gerados e taca no binary_search
 
